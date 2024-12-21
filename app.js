@@ -1,3 +1,7 @@
+//Get dom objects
+const tableBody = document.getElementById("books");
+const addBookBtn = document.getElementById("add-book");
+
 const myLibrary = []
 
 function Book(title, author, pages, read){
@@ -21,3 +25,11 @@ addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 180, "read");
 addBookToLibrary("Moby Dick", "Herman Melville", 635, "not read");
 addBookToLibrary("Pride and Prejudice", "Jane Austen", 279, "read");
 
+
+function showBooks(){
+    myLibrary.forEach(book => tableBody.innerHTML += `
+        <tr><td>${book.title}</td><td>${book.author}</td><td>${book.pages}</td><td>${book.read}</td></tr>
+    `);
+}
+
+showBooks()
