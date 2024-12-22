@@ -21,30 +21,37 @@
             </tbody>
         </table>
         <button id="add-book">Add Book</button>
-        <dialog id="dialog">
-            <form id="book-form">
+
+        <dialog id="dialog" open>
+            <div id="main-form-div">
                 <div id="background"></div>
-                <div class="form-fields">
-                    <div>
-                        <label for="book-name">Book Name:</label>
-                        <input type="text" id="book-name">
-                    </div>
-                    <div>
-                        <label for="author">pages</label>
-                        <input type="text" id="author">
-                    </div>
-                    <div>
-                        <label for="pages">Pages</label>
-                        <input type="number"  id="pages">
-                    </div>
-                    <div>
-                        <label for="pages">Pages</label>
-                        <input type="number"  id="pages">
-                    </div>
+                <div>
+                    <form id="book-form">
+                        <div class="form-fields">
+                            <div>
+                                <label for="book-name">Book Name:</label>
+                                <input type="text" id="book-name" autofocus>
+                            </div>
+                            <div>
+                                <label for="author">pages</label>
+                                <input type="text" id="author">
+                            </div>
+                            <div>
+                                <label for="pages">Pages</label>
+                                <input type="number"  id="pages">
+                            </div>
+                            <div>
+                                <label for="pages">Pages</label>
+                                <input type="number"  id="pages">
+                            </div>
+                            <div id="form-buttons">
+                                <button id="close-btn">Close</button>  
+                                <button type="submit" id="submit">Submit</button>  
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                
-            </form>
-            <button autofocus>Close</button>
+            </div>
         </dialog>
         <button>Show the dialog</button>
     </div>

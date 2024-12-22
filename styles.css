@@ -11,7 +11,51 @@
 #dialog{
     width: 30vw;
     min-width: 550px;
-    height: 50vh
+    height: 50vh;
+    min-height: max-content;
+}
+
+.form-fields{
+    display: grid;
+    grid-template-rows: repeat(20, 1fr);
+    height: 700px;
+}
+
+#form-buttons{
+    flex-direction:row;
+    justify-content: space-around;
+    grid-row:18;
+}
+
+#close-btn{
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    color: aliceblue;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: rgb(0, 0, 0);
+}
+
+#submit{
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    color: aliceblue;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #2dc653;
+}
+
+#main-form-div{
+    display: grid;
+    grid-template-columns: .8fr 1fr;
+    gap: 20px;
+}
+#background{
+    height: 700px;
+    background-image: url(images/pexels-ekrulila-2128249.jpg);
+    background-size:cover;
 }
 
 .form-fields > div{
