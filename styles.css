@@ -21,10 +21,18 @@
     height: 700px;
 }
 
-#form-buttons{
-    flex-direction:row;
-    justify-content: space-around;
-    grid-row:18;
+#logo{
+    flex-direction: row;
+    font-size: 2rem;
+    justify-content: start;
+    align-items: center;
+    grid-row: 1/4;
+    box-shadow: 2px 2px rgba(128, 128, 128, 0.193);
+    border: #6d6d6d10 solid 1px;
+
+}
+#logo > img{
+    width: 50px;
 }
 
 #close-btn{
@@ -61,6 +69,13 @@
     justify-content: space-around;
     grid-row: 15;
 }
+
+#form-buttons{
+    flex-direction:row;
+    justify-content: space-around;
+    grid-row:18;
+}
+
 
 #submit{
     width: 100px;
