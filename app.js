@@ -2,9 +2,11 @@
 const tableBody = document.getElementById("books");
 const addBookBtn = document.getElementById("add-book");
 
-const dialog = document.querySelector("dialog");
-const showButton = document.querySelector("dialog + button");
-const closeButton = document.querySelector("dialog button");
+const dialog = document.getElementById("dialog");
+const showButton = document.getElementById("add-book");
+const submitBtn = document.getElementById("submit")
+const closeButton = document.getElementById("close-btn");
+
 //create variables
 const myLibrary = []
 
@@ -40,8 +42,15 @@ addBookToLibrary("Pride and Prejudice", "Jane Austen", 279, "read");
 
 showBooks()
 
-addEventListener(onclick, ()=>{
+dialog.addEventListener("close", (e) => {
+    console.log(document.getElementById("book-name").value)
+    console.log(dialog.returnValue === "default" ? "No return value." : `ReturnValue: ${dialog.returnValue}.`); // Have to check for "default" rather than empty string
+});
 
+submitBtn.addEventListener("click", (e) =>{
+    e.preventDefault();
+    console.log(`yes`);
+    dialog.close();
 });
 
 // "Show the dialog" button opens the dialog modally

@@ -26,7 +26,7 @@
             <div id="main-form-div">
                 <div id="background"></div>
                 <div>
-                    <form id="book-form">
+                    <form id="book-form" >
                         <div class="form-fields">
                             <div id="logo"><img src="images/bookshelf.svg" alt="bookshelf">My library</div>
                             <div id="book-name">
@@ -44,24 +44,23 @@
                             <div id="read-status">Read Status</div>
                             <div id="radio-btns">
                                 <div>
-                                    <input type="radio" id="read" name="read_status" value="read">
+                                    <input type="radio" id="read" name="read_status">
                                     <label for="read">Read</label>
                                 </div>
                                 <div>
-                                    <input type="radio" id="not-read" name="read_status" value="not-read">
+                                    <input type="radio" id="not-read" name="read_status">
                                     <label for="not-read">Not Read</label>
                                 </div>                                     
                             </div>
                             <div id="form-buttons">
-                                <button id="close-btn">Close</button>  
-                                <button type="submit" id="submit">Submit</button>  
+                                <button id="close-btn" formmethod="dialog">Close</button>  
+                                <button type="submit" id="submit" value="default">Submit</button>  
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </dialog>
-        <button>Show the dialog</button>
     </div>
 <script src="app.js"></script>
 </body>
