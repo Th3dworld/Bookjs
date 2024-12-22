@@ -37,6 +37,31 @@
     background-color: rgb(0, 0, 0);
 }
 
+#book-name{
+    justify-content: space-around;
+    grid-row: 5/7;
+}
+
+#author{
+    justify-content: space-around;
+    grid-row: 8/10;
+}
+
+#pages{
+    justify-content: space-around;
+    grid-row: 11/13;
+}
+#read-status{
+    grid-row:14;
+    align-items: center;
+}
+
+#radio-btns{
+    flex-direction: row;
+    justify-content: space-around;
+    grid-row: 15;
+}
+
 #submit{
     width: 100px;
     height: 30px;
