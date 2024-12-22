@@ -2,6 +2,9 @@
 const tableBody = document.getElementById("books");
 const addBookBtn = document.getElementById("add-book");
 
+const dialog = document.querySelector("dialog");
+const showButton = document.querySelector("dialog + button");
+const closeButton = document.querySelector("dialog button");
 //create variables
 const myLibrary = []
 
@@ -38,5 +41,15 @@ addBookToLibrary("Pride and Prejudice", "Jane Austen", 279, "read");
 showBooks()
 
 addEventListener(onclick, ()=>{
-    
+
+});
+
+// "Show the dialog" button opens the dialog modally
+showButton.addEventListener("click", () => {
+    dialog.showModal();
+});
+  
+// "Close" button closes the dialog
+closeButton.addEventListener("click", () => {
+  dialog.close();
 });
