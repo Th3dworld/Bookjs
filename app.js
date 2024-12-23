@@ -27,8 +27,9 @@ function addBookToLibrary(title, author, pages, read){
 }
 
 function showBooks(){
+    tableBody.innerHTML = ""
     myLibrary.forEach(book => tableBody.innerHTML += `
-        <tr><td>${book.title}</td><td>${book.author}</td><td>${book.pages}</td><td>${book.read}</td></tr>
+        <tr id=${book.title}><td>${book.title}</td><td>${book.author}</td><td>${book.pages}</td><td>${book.read}</td></tr>
     `);
 }
 
@@ -43,13 +44,27 @@ addBookToLibrary("Pride and Prejudice", "Jane Austen", 279, "read");
 showBooks()
 
 dialog.addEventListener("close", (e) => {
-    console.log(document.getElementById("book-name").value)
-    console.log(dialog.returnValue === "default" ? "No return value." : `ReturnValue: ${dialog.returnValue}.`); // Have to check for "default" rather than empty string
+    console.log(dialog.returnValue === "" ? "No return value." : `ReturnValue: ${dialog.returnValue}.`); // Have to check for "default" rather than empty string
 });
 
 submitBtn.addEventListener("click", (e) =>{
     e.preventDefault();
-    console.log(`yes`);
+
+    const title = document.getElementById("bookName").value
+    const author = document.getElementById("Author").value
+    const pages = document.getElementById("pageNumber").value
+    const read = document.getElementsByName("readStatus")
+    var read_status = ""
+
+    read.forEach(btn =>{
+        if(btn.checked){
+            read_status = btn.value
+        }
+    });
+
+    addBookToLibrary(title, author, pages, read_status);
+    showBooks()
+
     dialog.close();
 });
 

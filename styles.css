@@ -31,6 +31,7 @@
     border: #6d6d6d10 solid 1px;
 
 }
+
 #logo > img{
     width: 50px;
 }
@@ -92,6 +93,7 @@
     grid-template-columns: .8fr 1fr;
     gap: 20px;
 }
+
 #background{
     height: 700px;
     background-image: url(images/pexels-ekrulila-2128249.jpg);
