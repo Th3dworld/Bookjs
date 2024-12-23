@@ -8,7 +8,7 @@ const submitBtn = document.getElementById("submit")
 const closeButton = document.getElementById("close-btn");
 
 //create variables
-const myLibrary = []
+var myLibrary = []
 
 //Logic functions
 function Book(title, author, pages, read){
@@ -31,6 +31,18 @@ function showBooks(){
     myLibrary.forEach(book => tableBody.innerHTML += `
         <tr id="${book.title}"><td>${book.title}</td><td>${book.author}</td><td>${book.pages}</td><td>${book.read}</td><td><img src="images/trash-can-outline.svg" alt="trash-can-outline" class="delete" name="${book.title}"></td></tr>
     `);
+
+    const deleteRow = Array.from(document.getElementsByClassName('delete'));
+
+    deleteRow.forEach(elem =>{
+    elem.addEventListener("click", ()=>{
+        console.log(elem.getAttribute("name"))
+        myLibrary = myLibrary.filter(el => el.title !== elem.getAttribute("name"))
+        deleteRow.pop(deleteRow.findIndex(el => el === elem))
+        showBooks()
+    });
+})
+
 }
 
 
@@ -77,13 +89,4 @@ closeButton.addEventListener("click", () => {
 });
 
 showBooks()
-const deleteRow = Array.from(document.getElementsByClassName('delete'));
 
-deleteRow.forEach(elem =>{
-    elem.addEventListener("click", ()=>{
-        const child = document.querySelector(`tr#${elem.getAttribute("name")}`)
-        console.log(elem.getAttribute("name"))
-        console.log(child)
-        tableBody.removeChild(child)
-    });
-})
