@@ -32,6 +32,11 @@ function showBooks(){
         <tr id="${book.title}"><td>${book.title}</td><td>${book.author}</td><td>${book.pages}</td><td>${book.read}</td><td><img src="images/trash-can-outline.svg" alt="trash-can-outline" class="delete" name="${book.title}"></td></tr>
     `);
 
+    if(myLibrary.length === 0){
+        tableBody.innerHTML += `
+        <tr><td colspan="5" text-align="center">No books here boss</td></tr>`
+    }
+
     const deleteRow = Array.from(document.getElementsByClassName('delete'));
 
     deleteRow.forEach(elem =>{
