@@ -29,7 +29,7 @@ function addBookToLibrary(title, author, pages, read){
 function showBooks(){
     tableBody.innerHTML = ""
     myLibrary.forEach(book => tableBody.innerHTML += `
-        <tr id=${book.title}><td>${book.title}</td><td>${book.author}</td><td>${book.pages}</td><td>${book.read}</td></tr>
+        <tr id="${book.title}"><td>${book.title}</td><td>${book.author}</td><td>${book.pages}</td><td>${book.read}</td><td><img src="images/trash-can-outline.svg" alt="trash-can-outline" class="delete" name="${book.title}"></td></tr>
     `);
 }
 
@@ -40,8 +40,6 @@ addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 180, "read");
 addBookToLibrary("Moby Dick", "Herman Melville", 635, "not read");
 addBookToLibrary("Pride and Prejudice", "Jane Austen", 279, "read");
 
-
-showBooks()
 
 dialog.addEventListener("close", (e) => {
     console.log(dialog.returnValue === "" ? "No return value." : `ReturnValue: ${dialog.returnValue}.`); // Have to check for "default" rather than empty string
@@ -77,3 +75,15 @@ showButton.addEventListener("click", () => {
 closeButton.addEventListener("click", () => {
   dialog.close();
 });
+
+showBooks()
+const deleteRow = Array.from(document.getElementsByClassName('delete'));
+
+deleteRow.forEach(elem =>{
+    elem.addEventListener("click", ()=>{
+        const child = document.querySelector(`tr#${elem.getAttribute("name")}`)
+        console.log(elem.getAttribute("name"))
+        console.log(child)
+        tableBody.removeChild(child)
+    });
+})
